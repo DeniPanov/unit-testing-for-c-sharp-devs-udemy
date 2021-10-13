@@ -3,13 +3,9 @@ using TestNinja.Fundamentals;
 
 namespace TestNinja.UnitTests
 {
+    [TestFixture]
     public class ReservationTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void CanBeCanceledBy_UserIsAdmin_ReturnsTrue()
         {
@@ -17,7 +13,9 @@ namespace TestNinja.UnitTests
 
             var result = reservation.CanBeCancelledBy( new User { IsAdmin = true });
 
-            Assert.IsTrue(result);
+            //Assert.IsTrue(result);
+            //Assert.That(result == true);
+            Assert.That(result, Is.True);
         }
 
         [Test]
